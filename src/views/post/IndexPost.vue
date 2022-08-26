@@ -64,8 +64,24 @@ export default {
 
         //return
         return {
-            posts
+            posts,
+            postsDelete
         }
+        //method delete
+        function postDelete(id) {
+            
+        //delete data post by ID
+        axios.delete(`http://localhost:8000/api/posts/${id}`)
+        .then(() => {
+
+            //splice posts 
+            posts.value.splice(posts.value.indexOf(id), 1);
+
+        }).catch(error => {
+            console.log(error.response.data)
+    })
+
+}
 
     }
 
