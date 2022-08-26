@@ -50,7 +50,7 @@ export default {
         onMounted(() => {
 
             //get API from Laravel Backend
-            axios.get('http://localhost:8000/api/post')
+            axios.get('http://localhost:8000/api/posts')
             .then(response => {
               
               //assign state posts with response data
