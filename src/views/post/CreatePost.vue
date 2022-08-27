@@ -57,15 +57,14 @@ export default {
 
         //method store
         function store() {
-
             let title   = post.title
             let content = post.content
 
             axios.post('http://localhost:8000/api/posts', {
                 title: title,
                 content: content
-            }).then(() => {
-
+            }).then((response) => {
+                console.log(response)
                 //redirect ke post index
                 router.push({
                     name: 'post.index'

@@ -22,7 +22,8 @@
                                     <td>{{ post.content }}</td>
                                     <td class="text-center">
                                         <router-link :to="{name: 'post.edit', params:{id: post.id }}" class="btn btn-sm btn-primary mr-1">EDIT</router-link>
-                                        <button class="btn btn-sm btn-danger ml-1">DELETE</button>
+                                        <button @click.prevent="postDelete(post.id)"
+                                            class="btn btn-sm btn-danger ml-1">DELETE</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -65,7 +66,7 @@ export default {
         //return
         return {
             posts,
-            postsDelete
+            postDelete
         }
         //method delete
         function postDelete(id) {
